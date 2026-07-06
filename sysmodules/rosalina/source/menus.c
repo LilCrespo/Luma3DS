@@ -33,6 +33,7 @@
 #include "menus/n3ds.h"
 #include "menus/debugger.h"
 #include "menus/miscellaneous.h"
+#include "menus/spotify.h"
 #include "menus/sysconfig.h"
 #include "menus/screen_filters.h"
 #include "plugin.h"
@@ -53,6 +54,7 @@ Menu rosalinaMenu = {
         { "Process list", METHOD, .method = &RosalinaMenu_ProcessList },
         { "Debugger options...", MENU, .menu = &debuggerMenu },
         { "System configuration...", MENU, .menu = &sysconfigMenu },
+        { "Spotify...", MENU, .menu = &spotifyMenu },
         { "Miscellaneous options...", MENU, .menu = &miscellaneousMenu },
         { "Save settings", METHOD, .method = &RosalinaMenu_SaveSettings },
         { "Return To HOME Menu", METHOD, .method = &RosalinaMenu_ReturnToHomeMenu },
@@ -229,6 +231,11 @@ void RosalinaMenu_ShowCredits(void)
         Draw_DrawString(10, 10, COLOR_TITLE, "Rosalina -- Luma3DS credits");
 
         u32 posY = Draw_DrawString(10, 30, COLOR_WHITE, "Luma3DS (c) 2016-2026 LumaTeam") + SPACING_Y;
+
+        posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "Fork by LilCrespo");
+        posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "Based on Luma3DS");
+
+        posY += SPACING_Y;
 
         posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "3DSX loading code by fincs");
         posY = Draw_DrawString(10, posY + SPACING_Y, COLOR_WHITE, "Networking code & basic GDB functionality by Stary");

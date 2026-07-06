@@ -38,6 +38,7 @@
 #include "minisoc.h"
 #include "plugin.h"
 #include "menus/screen_filters.h"
+#include "menus/spotify.h"
 #include "shell.h"
 
 //#define ROSALINA_MENU_SELF_SCREENSHOT 1 // uncomment this to enable the feature
@@ -378,6 +379,9 @@ void menuThreadMain(void)
         Cheat_ApplyCheats();
 
         u32 kHeld = scanHeldKeys();
+        u32 kDown = convertHidKeys(hidKeysDown());
+
+        Spotify_HandleHotkeys(kHeld, kDown);
 
         if(((kHeld & menuCombo) == menuCombo) && !g_blockMenuOpen)
         {
