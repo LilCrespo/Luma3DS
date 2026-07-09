@@ -52,6 +52,22 @@ The token file is expected at:
 /config/spotify/token.json
 ```
 
+### Token file format
+
+The `token.json` file must use the following format:
+
+```json
+{
+  "client_id": "YOUR_SPOTIFY_CLIENT_ID",
+  "access_token": "SPOTIFY_ACCESS_TOKEN",
+  "refresh_token": "SPOTIFY_REFRESH_TOKEN",
+  "expires_at": 0,
+  "scope": "user-modify-playback-state user-read-playback-state user-read-currently-playing"
+}
+```
+
+The easiest way to generate this file is by using [3ds-spotify-api-token-setup](https://github.com/LilCrespo/3ds-spotify-api-token-setup).
+
 ## Installation and upgrade
 
 Luma3DS requires [boot9strap](https://github.com/SciresM/boot9strap) to run.
