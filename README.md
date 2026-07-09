@@ -68,22 +68,18 @@ Once boot9strap has been installed, simply download the [latest release archive]
 
 **GDB ports**, when enabled, are `4000-4002` for the normal ports. Use of `attach` in "extended-remote" mode, alongside `info os processes` is supported and encouraged (for reverse-engineering, also check out `monitor getmemregions`). The port for the break-on-start feature is `4003` without "extended-remote". Both devkitARM-patched GDB and IDA Pro (without "stepping support" enabled) are actively supported.
 
-We have a wiki, however it is currently very outdated.
+There is a wiki, however it is currently very outdated.
 
 ## Building from source
 
 To build Luma3DS, the following is needed:
-
 * git
 * [makerom](https://github.com/jakcron/Project_CTR) in `$PATH`
-* [firmtool](httpsDS, the following is needed:
-* git
-* [makerom](https://github.com/jakcron://github.com/TuxSH/firmtool) installed
+* [firmtool](https://github.com/TuxSH/firmtool) installed
 * up-to-date devkitARM and libctru:
-
-  * install `dkp-pacman` (or, for distributions that already provide pacman, add repositories): https://devkitpro.org/wiki/devkitPro_pacman
-  * install packages from `3ds-dev` metapackage: `sudo dkp-pacman -S 3ds-dev --needed`
-  * while libctru and Luma3DS releases are kept in sync, you may have to build libctru from source for non-release Luma3DS commits
+    * install `dkp-pacman` (or, for distributions that already provide pacman, add repositories): https://devkitpro.org/wiki/devkitPro_pacman
+    * install packages from `3ds-dev` metapackage: `sudo dkp-pacman -S 3ds-dev --needed`
+    * while libctru and Luma3DS releases are kept in sync, you may have to build libctru from source for non-release Luma3DS commits
 
 While Luma3DS releases are bundled with `3ds-hbmenu`, Luma3DS actually compiles into one single file: `boot.firm`. Just copy it over to the root of your SD card ([ftpd](https://github.com/mtheall/ftpd) is the easiest way to do so), and you're done.
 
